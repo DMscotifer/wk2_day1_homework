@@ -39,4 +39,22 @@ def test_get_book_info
   ], @Book_Marx.get_book_info("Communist Manifesto"))
 end
 
+def test_return_rental_details
+  assert_equal({
+    student_name: "Vlad",
+    date: "01/10/1917"
+  }, @Book_Marx.return_rental_details("Communist Manifesto"))
+end
+
+def test_add_book_to_library
+  new_book = {
+    title: "Black Swan",
+    rental_details: {
+      student_name: "",
+      date: ""
+    }
+  }
+  assert_equal(2, @Book_Marx.add_book_to_library(new_book).count)
+end
+
 end
