@@ -47,14 +47,7 @@ def test_return_rental_details
 end
 
 def test_add_book_to_library
-  new_book = {
-    title: "Black Swan",
-    rental_details: {
-      student_name: "",
-      date: ""
-    }
-  }
-  assert_equal(2, @Book_Marx.add_book_to_library(new_book).count)
+  assert_equal(2, @Book_Marx.add_book_to_library("Capital in the 21st Century").count)
 end
 
 end
