@@ -50,4 +50,16 @@ def test_add_book_to_library
   assert_equal(2, @Book_Marx.add_book_to_library("Capital in the 21st Century").count)
 end
 
+def test_change_rental_details
+  assert_equal([
+    {
+      title: "Communist Manifesto",
+      rental_details: {
+        student_name: "Stalin",
+        date: "01/09/1939"
+      }
+    }
+  ], @Book_Marx.change_rental_details("Communist Manifesto", "Stalin", "01/09/1939"))
+end
+
 end
