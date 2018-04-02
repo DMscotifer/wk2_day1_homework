@@ -24,10 +24,19 @@ def test_get_books
         date: "01/10/1917"
       }
     }
-  ], get_books(@Book_Marx)
-
-  )
+  ], @Book_Marx.books())
 end
 
+def test_get_book_info
+  assert_equal([
+    {
+      title: "Communist Manifesto",
+      rental_details: {
+        student_name: "Vlad",
+        date: "01/10/1917"
+      }
+    }
+  ], @Book_Marx.get_book_info("Communist Manifesto"))
+end
 
 end
