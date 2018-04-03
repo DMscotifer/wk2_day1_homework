@@ -32,10 +32,10 @@ end
 
 def change_rental_details(book_name, student, date)
   for book in books
-    if book[:name] == book_name
-      book[:rental_details] == {
-        student_name: "Stalin",
-        date: "01/09/1939"
+    if book[:title] == book_name
+      book[:rental_details] = {
+        student_name: student,
+        date: date
       }
       # book[:rental_details][:student_name] == student
       # book[:rental_details][:date] == date

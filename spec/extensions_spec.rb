@@ -51,6 +51,7 @@ def test_add_book_to_library
 end
 
 def test_change_rental_details
+  @Book_Marx.change_rental_details("Communist Manifesto", "Stalin", "01/09/1939")
   assert_equal([
     {
       title: "Communist Manifesto",
@@ -59,7 +60,7 @@ def test_change_rental_details
         date: "01/09/1939"
       }
     }
-  ], @Book_Marx.change_rental_details("Communist Manifesto", "Stalin", "01/09/1939"))
+  ], @Book_Marx.get_books())
 end
 
 end
